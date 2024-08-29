@@ -13,7 +13,11 @@ buttons.map(button => {
                 }
                 break; 
             case '=':
-                display.innerText     = eval(display.innerText);
+                try{
+                display.innerText = eval(display.innerText);
+                }catch{
+                    display.innerText='Error!';
+                }
                 break;  
             default:
                 display.innerText += e.target.innerText;
